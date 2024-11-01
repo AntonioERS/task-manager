@@ -1,3 +1,4 @@
+
 function nuevaNotificacion() {
   alert ("Tiene una nueva notificación");
 }
@@ -9,4 +10,3 @@ function salirNotificacion() {
 function enviarNotificacion() {
   prompt ("Escriba la notificación a enviar");
 }
-

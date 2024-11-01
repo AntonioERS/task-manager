@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheat Sheet</title>
+    <script src="js/notificaciones.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>HTML CHEAT SHEET</h1>
+    <p>Enlace a la <a href="https://html.spec.whatwg.org/multipage/" target="_blank">página oficial de HTML</a></p>
+    <p>Enlace a la <a href="https://html.spec.whatwg.org/multipage/indices.html#elements-3" target="_blank">lista de
+            todos los elementos de HTML</a></p>
+    <h2>Elementos de línea</h2>
+
+    <table>
+        <tr>
+            <th>Elemento</th>
+            <th>Descripción</th>
+            <th>Atributos</th>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;a&gt;</td>
+            <td>
+                <p>Un enlace</p>
+                <p class="ejemplo">&lt;a href=&quot;https://example.org&quot; target=&quot;_blank&quot;&gt;Un enlace a
+                    example.org&lt;/a&gt;</p>
+                <p><a href="http://example.org" target="_blank">Un enlace a example.org</a></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>download</dt>
+                    <dd>Hace que el navegador trate el enlace como una descarga. Puede ser utilizado con o sin el valor
+                        filename. Sin el valor, el navegador sugerirá el nombre y extensión, con filename el valor será
+                        el sugerido como nombre de archivo. Solamente funciona con URLs locales</dd>
+                    <dt>href</dt>
+                    <dd>La URL al que apunta el hipervínculo. Puede ser otra página, una sección del propio documento
+                        (utilizando # para indicar el id de la sección)</dd>
+                    <dt>target</dt>
+                    <dd>Donde mostrar la URL, con los valores <code>_self</code> (por defecto, la propia página),
+                        <code>_blank</code> (normalmente
+                        una nueva pestaña), <code>_parent</code> (el contexto padre de navegación), <code>_top</code>
+                        (el contexto "más alto" de
+                        navegación)
+                    </dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;img&gt;</td>
+            <td>
+                <p>Una imagen</p>
+                <p>Es un <a href="#elementoVacio">elemento vacío</a></p>
+                <p class="ejemplo">&lt;img src=&quot;ejemplo.png&quot; width=&quot;50&quot;/&gt;</p>
+                <p><img src="ejemploImagen.png" width="250" /></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>alt</dt>
+                    <dd>Contiene una descripción en texto de la imagen, útil para accesibilidad</dd>
+                    <dt>height</dt>
+                    <dd>La altura intrínseca de la imagen, en píxeles. Debe ser un entero sin unidades. Es útil
+                        especificarla para que el navegador "reserve" el sitio de la imagen al cargar la página</dd>
+                    <dt>src</dt>
+                    <dd><strong>Atributo obligatorio</strong>, contiene el vínculo a la imagen</dd>
+                    <dt>srcset</dt>
+                    <dd>Una o varias cadenas separadas por comas, indicando las posibles fuentes de la imagen en caso de
+                        utilizar distintos tamaños o resoluciones. Cada cadena está compuesta de una URL a la imagen y
+                        (opcionalmente) un espacio en blanco seguido de: o un indicador de la anchura (entero positivo
+                        seguido de <code>w</code>) o un indicador de la densidad de pixeles (número decimal positivo
+                        seguido de <code>x</code>). No es posible utilizar ambos indicadores al mismo tiempo</dd>
+                    <dt>width</dt>
+                    <dd>La anchura intrínseca de la imagen, en píxeles. Debe ser un entero sin unidades. Es útil
+                        especificarla para que el navegador "reserve" el sitio de la imagen</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;span&gt;</td>
+            <td>
+                <p>Un contenedor genérico en línea</p>
+                <p>Utilizado para agrupar elementos, por ejemplo, para darles un estilo. Es parecido al elemento
+                    <code>&lt;div&gt;</code>, pero mientras que <code>&lt;div&gt;</code> es un elemento de bloque,
+                    <code>&lt;span&gt;</code> es un elemento en línea. No tiene valor semántico y no tiene más atributos
+                    que los atributos globales.
+                </p>
+                <p class="ejemplo">&lt;span style=&quot;color:blue&quot;&gt;Dando un estilo&lt;/span&gt;</p>
+                <p><span style="color:blue">Dando un estilo</span></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;em&gt;</td>
+            <td>
+                <p>Enfatizar texto</p>
+                <p>El texto aparece en cursiva. Tiene valor semántico. No tiene más atributos que los atributos
+                    globales.</p>
+                <p class="ejemplo">&lt;em&gt;I&apos;m posh&lt;/em&gt;</p>
+                <p><em>I'm posh</em></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;i&gt;</td>
+            <td>
+                <p>Texto en cursiva.</p>
+                <p>Ejemplos de uso: términos técnicos, pensamientos, nombres de navío, palabras en otra lengua distinta
+                    al del resto del texto, etc. No tiene más atributos que los atributos globales.</p>
+                <p class="ejemplo">Este texto aparece en &lt;i&gt;cursiva&lt;/i&gt;</p>
+                <p>Este texto aparece en <i>cursiva</i></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;b&gt;</td>
+            <td>
+                <p>Texto en negrita.</p>
+                <p>No tiene valor semántico y debería evitarse su uso. Para poner texto en negrilla tendría que hacerse
+                    utilizando la propiedad de CSS <code>font-weight</code>. No tiene más atributos que los atributos
+                    globales.</p>
+                <p class="ejemplo">Este texto aparece en &lt;b&gt;negrita&lt;/b&gt;</p>
+                <p>Este texto aparece en <b>negrita</b></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;strong&gt;</td>
+            <td>
+                <p>Texto con gran importancia, seriedad o urgencia.</p>
+                <p>El texto aparece en negrita. Tiene valor semántico. No tiene más atributos que los atributos
+                    globales.</p>
+                <p class="ejemplo">&lt;strong&gt;Soy importante&lt;/strong&gt;</p>
+                <p><strong>Soy importante</strong></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;mark&gt;</td>
+            <td>
+                <p>Resaltar texto</p>
+                <p>El texto aparece resaltado en fluorescente. Tiene valor semántico e indica que es un texto relevante
+                    para el usuario, por ejemplo como el resultado de una búsqueda. No debe usarse sólo para resaltar
+                    texto, para ello es más adecuado utilizar el elemento <code>&lt;span&gt;</code> con un estilo CSS
+                    aplicado a él. No tiene más atributos que los atributos globales. </p>
+                <p class="ejemplo">&lt;mark&gt;Notice me&lt;/mark&gt;, senpai</p>
+                <p><mark>Notice me</mark>, senpai</p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;s&gt;</td>
+            <td>
+                <p>Tachar texto</p>
+                <p>Se utiliza para representar cosas que ya no son relevantes o correctas. No es adecuado para indicar
+                    una edición del documento, para ello se deben usar los elementos <code>&lt;del&gt;</code> y
+                    <code>&lt;ins&gt;</code>. No tiene más atributos que los atributos globales.
+                </p>
+                <p class="ejemplo">&lt;s&gt;Soy irrelevante&lt;/s&gt;</p>
+                <p><s>Soy irrelevante</s></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;sub&gt;</td>
+            <td>
+                <p>Subíndice</p>
+                <p>Usos típicos: marcado de notas a pie de página, subíndices en fórmulas matemáticas, número de átomos
+                    en fórmulas químicas. No tiene más atributos que los atributos globales.</p>
+                <p class="ejemplo">H&lt;sub&gt;2&lt;sub&gt;O</p>
+                <p>H<sub>2</sub>O</p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;small&gt;</td>
+            <td>
+                <p>Letra pequeña</p>
+                <p>El texto marcado aparece en un tamaño menor al resto del texto. Utilizado para comentarios y letra
+                    pequeña, como <i>copyright</i> y texto legal. No tiene más atributos que los atributos globales</p>
+                <p class="ejemplo">Ejemplo de &lt;small&gt;texto pequeño&lt;/small&gt;</p>
+                <p>Ejemplo de <small>letra pequeña</small></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;address&gt;</td>
+            <td>
+                <p>Para direcciones</p>
+                <p>Indica que el texto marcado contiene información de contacto. El texto aparece en cursiva. No tiene
+                    más atributos que los atributos globales.</p>
+                <p class="ejemplo">&lt;address&gt;Calle falsa, 123&lt;/address&gt;</p>
+                <p>
+                <address>Calle falsa, 123</address>
+                </p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;cite&gt;</td>
+            <td>
+                <p>Cita textual</p>
+                <p>Se utiliza para macar el título de un trabajo citado (un libro, ensayo, poema, canción, etc.). El
+                    título citado aparece en cursiva. No tiene más atributos que los atributos globales.</p>
+                <p class="ejemplo">Para más monstruos ver &lt;cite&gt;El monstruoso libro de monstruos&lt;/cite&gt;</p>
+                <p>Para más monstruos, ver <cite>El monstruoso libro de los monstruos</cite>.</p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;sup&gt;</td>
+            <td>
+                <p>Superíndice</p>
+                <p>Usos típicos son: exponentes en matemáticas, abreviaturas de palabras como María: M<sup>a</sup>,
+                    representación de números ordinales como 3<sup>o</sup>. No tiene más atributos que los atributos
+                    globales.</p>
+                <p class="ejemplo">X&lt;sup&gt;2&lt;/sup&gt;</p>
+                <p>X<sup>2</sup></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;q&gt;</td>
+            <td>
+                <p>Cita en línea</p>
+                <p>Se utiliza para citar textos cortos que no requieran salto de línea. En ese caso se debe usar el
+                    elemento <code>&lt;blockquote&gt;</code>. El texto citado aparece entre comillas.</p>
+                <p class="ejemplo">&lt;q&gt;¿Yo?&lt;/q&gt;, dijo ella</p>
+                <p><q>¿Yo?</q>, dijo ella</p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>cite</dt>
+                    <dd>El valor de este atributo es una URL que apunta al origen de la información citada.</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;br&gt;</td>
+            <td>
+                <p>Salto de línea</p>
+                <p>Útil para insertar saltos de línea en un poema o una dirección, donde la división de líneas tiene
+                    significado. No se debe utilizar para crear márgenes entre párrafos, en ese caso se debe rodear de
+                    elementos <code>&lt;p&gt;</code> y utilizar la propiedad <code>margin</code> de CSS para
+                    controlar su tamaño. Es un <a href="#elementoVacio">elemento vacío</a>. No tiene más atributos que
+                    los atributos globales.
+                </p>
+                <p class="ejemplo">Línea 1&lt;br&gt;Línea 2</p>
+                <p>Línea 1<br>Línea 2</p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;wbr&gt;</td>
+            <td>
+                <p>Un posible salto de línea</p>
+                <p>En caso de ser necesario, la palabra se divide en ese punto. Es un <a href="#elementoVacio">elemento
+                        vacío</a>. No tiene más atributos que los atributos globales.</p>
+                <p class="ejemplo">Llanfair&lt;wbr&gt;pwllgwyngyllgogerychwyrngogogoch.</p>
+                <p>Llanfair<wbr>pwllgwyngyllgogerychwyrngogogoch.</p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;time&gt;</td>
+            <td>
+                <p>Representa un período específico de tiempo. </p>
+                <p>
+                    Puede incluir el atributo <code>datetime</code> para
+                    traducir fechas en formato legible para el navegador, permitiendo mejores resultados para los
+                    motores de búsqueda o para recordatorios. Puede representar uno de los siguientes:
+                </p>
+                <p>
+                <ul>
+                    <li>Una hora en un reloj de 24 horas</li>
+                    <li>Una fecha concreta en el calendario gregoriano (opcionalmente con información de hora y zona
+                        horaria)</li>
+                    <li><a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-duration-string"
+                            target="_blank">Una duración válida de tiempo</a></li>
+                </ul>
+                </p>
+                <p class="ejemplo">&lt;time datetime=&quot;2020-05-23&quot; pubdate&gt;Publicado el
+                    23-05-2020&lt;/time&gt;</p>
+                <p><time datetime="2020-05-24" pubdate>Publicado el 23-05-2020</time></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>datetime</dt>
+                    <dd>Indica la hora y/o fecha del elemento, y debe estar en uno de los siguientes formatos:</dd>
+                    <dd>
+                        <ul>
+                            <li>Una cadena de año válida: <code>2011</code></li>
+                            <li>Una cadena de mes válida: <code>2011-11</code></li>
+                            <li>Una cadena de fecha válida: <code>2011-11-18</code></li>
+                            <li>Una cadena de fecha sin año válida: <code>11-18</code></li>
+                            <li>Una cadena de semana válida: <code>2011-W47</code></li>
+                            <li>Una cadena de hora válida: <code>14:54</code> <code>14:54:39</code>
+                                <code>14:54:39.929</code>
+                            </li>
+                            <li>Una cadena de fecha y hora local válida: <code>2011-11-18T14:54:39.929</code>
+                                <code>2011-11-18 14:54:39.929</code>
+                            </li>
+                            <li>Una cadena de fecha y hora global válida: <code>2011-11-18T14:54:39.929Z</code>
+                                <code>2011-11-18T14:54:39.929-0400</code> <code>2011-11-18T14:54:39.929-04:00</code>
+                                <code>2011-11-18 14:54:39.929Z</code> <code>2011-11-18 14:54:39.929-0400</code>
+                                <code>2011-11-18 14:54:39.929-04:00</code>
+                            </li>
+                            <li>Una cadena de duración de tiempo válida: <code>PT4H18M3SS</code></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;code&gt;</td>
+            <td>
+                <p>Formato de código</p>
+                <p>Para cuando queremos insertar código de programación. Por defecto el texto marcado es mostrado usando
+                    la fuente monoespacio por defecto del navegador (en estos apuntes está estilado con CSS). No tiene
+                    más atributos que los atributos globales.</p>
+                <p class="ejemplo">Este texto está en formato normal, pero &lt;code&gt;este texto está en formato de
+                    código&lt;/code&gt;</p>
+                <p>Este texto está en formato normal, pero <code>este texto está en formato de código</code></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;audio&gt;</td>
+            <td>
+                <p>Para insertar audio</p>
+                <p>Puede contener una o más fuentes de audio utilizando el atributo
+                    <code>src</code> o el elemento <code>source</code>, eligiendo el navegador la más adecuada. También
+                    puede ser el destinatario de medios transmitidos. El contenido entre las etiquetas
+                    <code>&lt;audio&gt;&lt;/audio&gt;</code> es el que se muestra como respaldo en los navegadores que
+                    no soportan el elemento.
+                </p>
+                <p class="ejemplo">
+                    &lt;audio controls&gt;
+                    &lt;source src=&quot;ejemploAudio.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+                    &lt;/audio&gt;
+                </p>
+                <p>
+                    <audio controls>
+                        <source src="ejemploAudio.mp3" type="audio/mp3">
+                    </audio>
+                </p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>autoplay</dt>
+                    <dd>Atributo booleano. Si es especificado, el audio comenzará a reproducirse automáticamente tan
+                        pronto como sea posible, sin esperar a que se cargue todo el archivo de audio. Práctica no
+                        recomendada.</dd>
+                    <dt>controls</dt>
+                    <dd>Si está presente, el navegador ofrecerá controles para la reproducción, volumen, búsqueda y
+                        pausar/continuar la reproducción. Si no se incluye, el navegador no mostrará los controles por
+                        defecto.</dd>
+                    <dt>controlslist</dt>
+                    <dd>Experimental. Ayuda al navegador a mostrar los controles adecuados al audio, cuando se
+                        ha especificado el atributo <code>controls</code>. Los valores admitidos son:
+                        <code>nodownload</code>, <code>nofullscreen</code> y <code>noremoteplayback</code>.
+                    </dd>
+                    <dt>crossorigin</dt>
+                    <dd>Indica cuándo utilizar CORS (Cross-Origin Resouce Sharing) para buscar el archivo de audio. Los
+                        valores admitidos son <code>anonymous</code> y <code>use-credentials</code>. Si no está
+                        presente, el recurso es buscado sin una petición CORS.</dd>
+                    <dt>disableremoteplayback</dt>
+                    <dd>Experimental. Atributo booleano utilizado para desactivar la capacidad de reproducción remota de
+                        dispositivos conectados via cable (HDMI, DVI, etc) o inalámbrica (Miracast, Chromecast, AirPlay,
+                        etc)</dd>
+                    <dt>loop</dt>
+                    <dd>Atributo booleano, si está especificado el reproductor de audio volverá al inicio al terminar de
+                        reproducir el audio.</dd>
+                    <dt>muted</dt>
+                    <dd>Atributo booleano, indica si el audio estará inicialmente desactivado. Su valor por defecto es
+                        <code>false</code>.
+                    </dd>
+                    <dt>preload</dt>
+                    <dd>Su intención es dar una pista al navegador sobre lo que el autor piensa que será la mejor
+                        experiencia para el usuario. Los valores admitidos son:</dd>
+                    <dd>
+                        <ul>
+                            <li><code>none</code> Indica que el audio no debe ser precargado.</li>
+                            <li><code>metadata</code> Indica que sólo los metadatos (por ejemplo, longitud) del audio
+                                son cargados.</li>
+                            <li><code>auto</code> Indica que todo el fichero de audio puede ser cargado, incluso si el
+                                usuario no espera usarlo.</li>
+                            <li>Cadena vacía: Un sinónimo del valor <code>auto</code></li>
+                        </ul>
+                    </dd>
+                    <dd>El valor por defecto es distinto para cada navegador. Se recomienda utilizar el valor
+                        <code>metadata</code>
+                    </dd>
+                    <dt>src</dt>
+                    <dd>La URL del audio a incrustar. Es opcional, en su lugar puede utilizarse el elemento
+                        <code>&lt;source&gt;</code> con varias fuentes distintas que den soporte a distintos
+                        navegadores.
+                    </dd>
+                    <dt>Eventos</dt>
+                    <dd>Hay una <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio#events"
+                            target="_blank">lista
+                            de eventos</a> soportados por este elemento.</dd>
+
+
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;video&gt;</td>
+            <td>
+                <p>Para insertar video</p>
+                <p>También puede insertar audio, útil para cuando queremos añadir una transcripción
+                    del audio, en los demás casos el elemento <code>&lt;audio&gt;</code> ofrece una mejor experiencia al
+                    usuario. El contenido entre las etiquetas <code>&lt;video&gt;&lt;/video&gt;</code> es el que se
+                    muestra como respaldo en los navegadores que no soportan el elemento.</p>
+                <p>Para mostrar subtítulos se puede emplear JavaScript con el elemento <code>&lt;track&gt;</code> y el
+                    formato
+                    WebVTT.</p>
+                <p class="ejemplo">
+                    &lt;video controls width=&quot;250&quot;
+                    src=&quot;ejemploVideo.webm&quot;&gt;
+                    &lt;a href=&quot;ejemploVideo.webm&quot;&gt;Descarga el video en webm&lt;/a&gt;
+                    &lt;/video&gt;
+                </p>
+                <p><video controls width="250" src="ejemploVideo.webm"><a href="ejemploVideo.webm">Descarga el video en
+                            webm</a></video></p>
+            </td>
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>autoplay</dt>
+                    <dd>Atributo booleano. Si es especificado, el video comenzará a reproducirse automáticamente tan
+                        pronto como sea posible, sin esperar a que se cargue todo el archivo de video. Práctica no
+                        recomendada.</dd>
+                    <dt>controls</dt>
+                    <dd>Si está presente, el navegador ofrecerá controles para la reproducción, volumen, búsqueda y
+                        pausar/continuar la reproducción. Si no se incluye, el navegador no mostrará los controles por
+                        defecto.</dd>
+                    <dt>controlslist</dt>
+                    <dd>Experimental. Ayuda al navegador a mostrar los controles adecuados al video, cuando se
+                        ha especificado el atributo <code>controls</code>. Los valores admitidos son:
+                        <code>nodownload</code>, <code>nofullscreen</code> y <code>noremoteplayback</code>. Utiliza el
+                        atributo <code>disablepictureinpicture</code> si quieres desactivar el modo y el control de
+                        Imagen a Imagen.
+                    </dd>
+                    <dt>crossorigin</dt>
+                    <dd>Indica cuándo utilizar CORS (Cross-Origin Resouce Sharing) para buscar el archivo de video. Los
+                        valores admitidos son <code>anonymous</code> y <code>use-credentials</code>. Si no está
+                        presente, el recurso es buscado sin una petición CORS.</dd>
+                    <dt>disablepictureinpicture</dt>
+                    <dd>Experimental. Evita que el navegador sugiera el menú contextual de Imagen a Imagen.</dd>
+                    <dt>disableremoteplayback</dt>
+                    <dd>Experimental. Atributo booleano utilizado para desactivar la capacidad de reproducción remota de
+                        dispositivos conectados via cable (HDMI, DVI, etc) o inalámbrica (Miracast, Chromecast, AirPlay,
+                        etc)</dd>
+                    <dt>height</dt>
+                    <dd>La altura del área para mostrar el vídeo, en píxeles CSS (sólo valores absolutos, no
+                        porcentajes). Se puede usar la propiedad de CSS <code>object-position</code> para ajustar la
+                        posición del vídeo dentro del marco del elemento, y la propiedad <code>object-fit</code> para
+                        controlar cómo el tamaño del vídeo se ajusta para encajar en el marco.</dd>
+                    <dt>loop</dt>
+                    <dd>Atributo booleano, si está especificado el reproductor de video volverá al inicio al terminar de
+                        reproducir el video.</dd>
+                    <dt>muted</dt>
+                    <dd>Atributo booleano, indica si el audio del vídeo estará inicialmente desactivado. Su valor por
+                        defecto es <code>false</code> (el audio se reproducirá cuando se reproduzca el video).
+                    </dd>
+                    <dt>playsinline</dt>
+                    <dd>Atributo booleano indicando que el vídeo será reproducido &quot;en línea&quot;, en el interior
+                        del área de reproducción del elemento. La ausencia de este elemento no implica que el vídeo será
+                        reproducido siempre a toda pantalla.</dd>
+                    <dt>poster</dt>
+                    <dd>Una URL de una imagen para mostrar mientras el vídeo está cargando. Si no se especifica este
+                        atributo, no se mostrará nada hasta que se cargue el primer fotograma, que entonces pasará a
+                        mostrarse.</dd>
+                    <dt>preload</dt>
+                    <dd>Su intención es dar una pista al navegador sobre lo que el autor piensa que será la mejor
+                        experiencia para el usuario. Los valores admitidos son:</dd>
+                    <dd>
+                        <ul>
+                            <li><code>none</code> Indica que el video no debe ser precargado.</li>
+                            <li><code>metadata</code> Indica que sólo los metadatos (por ejemplo, longitud) del video
+                                son cargados.</li>
+                            <li><code>auto</code> Indica que todo el fichero de video puede ser cargado, incluso si el
+                                usuario no espera usarlo.</li>
+                            <li>Cadena vacía: Un sinónimo del valor <code>auto</code></li>
+                        </ul>
+                    </dd>
+                    <dd>El valor por defecto es distinto para cada navegador. Se recomienda utilizar el valor
+                        <code>metadata</code>
+                    </dd>
+                    <dt>src</dt>
+                    <dd>La URL del video a incrustar. Es opcional, en su lugar puede utilizarse el elemento
+                        <code>&lt;source&gt;</code> con varias fuentes distintas que den soporte a distintos
+                        navegadores.
+                    </dd>
+                    <dt>width</dt>
+                    <dd>El ancho del área para mostrar el vídeo, en píxeles CSS (sólo valores absolutos, no
+                        porcentajes). Se puede usar la propiedad de CSS <code>object-position</code> para ajustar la
+                        posición del vídeo dentro del marco del elemento, y la propiedad <code>object-fit</code> para
+                        controlar cómo el tamaño del vídeo se ajusta para encajar en el marco.
+                    </dd>
+                    <dt>Eventos</dt>
+                    <dd>Hay una <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#events"
+                            target="_blank">lista de eventos</a> soportados por este elemento.</dd>
+                </dl>
+            </td>
+        </tr>
+
+    </table>
+
+    <p>Enlace a la <a href="https://html.spec.whatwg.org/multipage/indices.html#elements-3" target="_blank">lista de
+            todos los elementos de HTML</a></p>
+
+    <!--ELEMENTOS DE BLOQUE-->
+    <h2>Elementos de bloque</h2>
+
+    <table>
+        <tr>
+            <th>Elemento</th>
+            <th>Descripción</th>
+            <th>Atributos</th>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;p&gt;</td>
+
+            <td>
+                <p>Un simple párrafo.</p>
+                <p>No tiene más atributos que los atributos globales.</p>
+                <p class="ejemplo">&lt;p&gt;Soy un párrafo&lt;/p&gt; <br>&lt;p&gt;Soy otro párrafo&lt;/p&gt;</p>
+                <p>Soy un párrafo</p>
+                <p>Soy otro párrafo</p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;blockquote&gt;</td>
+
+            <td>
+                <p>Una cita extendida.</p>
+                <p>Aparece representada como un texto indentado. Se puede proporcionar una URL para la fuente de la cita
+                    con el atributo <code>cite</code>, mientras que se puede proporcionar un texto para la fuente con el
+                    elemento <code>&lt;cite&gt;</code></p>
+                <p class="ejemplo">Dijeron:&lt;blockquote&gt;El elemento blockquote indica una cita
+                    extendida.&lt;/blockquote&gt;</p>
+                <p>Dijeron:
+                <blockquote>El elemento blockquote indica una cita extendida.</blockquote>
+                </p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>cite</dt>
+                    <dd>Una URL que designa el documento fuente o mensaje de la información citada.</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;details&gt;</td>
+
+            <td>
+                <p>Información adicional.</p>
+                <p>Crea un widget en el cual la información es visible sólo cuando el widget se cambia al estado
+                    &quot;abierto&quot;. Un resumen o etiqueta debe ser proporcionado usando el elemento
+                    <code>&lt;summary&gt;</code>
+                </p>
+                <p class="ejemplo">&lt;details&gt; <br>&lt;summary&gt; Html Cheat Sheet&lt;/summary&gt;
+                    <br>&lt;p&gt;Elementos
+                    de línea&lt;/p&gt;<br> &lt;p&gt;Elementos de bloque&lt;/p&gt; <br>&lt;/details&gt;
+                </p>
+                <p>
+                <details>
+                    <summary>Html Cheat Sheet</summary>
+                    <p>Elementos de línea</p>
+                    <p>Elementos de bloque</p>
+                </details>
+                </p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>open</dt>
+                    <dd>Atributo booleano que indica si el contenido del elemento es visible actualmente. Los detalles
+                        son mostrados cuando existe este atributo, u ocultos cuando está ausente. Por defecto este
+                        atributo está ausente, por lo que los detalles no son visibles.</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;ul&gt;</td>
+
+            <td>
+                <p>Una lista no ordenada.</p>
+                <p>Representada habitualmente como una lista con puntos. No tiene más atributos que los atributos
+                    globales.</p>
+                <p class="ejemplo">&lt;ul&gt;<br> &lt;li&gt;Soy un ítem.&lt;/li&gt; <br>&lt;li&gt;Soy otro
+                    ítem.&lt;/li&gt;<br>
+                    &lt;/ul&gt;</p>
+                <p>
+                <ul>
+                    <li>Soy un ítem.</li>
+                    <li>Soy otro ítem.</li>
+                </ul>
+                </p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;ol&gt;</td>
+
+            <td>
+                <p>Una lista ordenada.</p>
+                <p>Típicamente representada como una lista numerada.</p>
+                <p class="ejemplo">&lt;ol&gt; <br>&lt;li&gt;Soy un ítem.&lt;/li&gt; <br>&lt;li&gt;Soy otro
+                    ítem.&lt;/li&gt;<br>
+                    &lt;/ol&gt;</p>
+                <p>
+                <ol>
+                    <li>Soy el primer ítem.</li>
+                    <li>Soy el segundo ítem.</li>
+                </ol>
+                </p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                    <dt>reversed</dt>
+                    <dd>Atributo booleano que especifica que los elementos de la lista están en orden invertido. Los
+                        elementos serán numerados de mayor a menor.</dd>
+                    <dt>start</dt>
+                    <dd>Entero desde el que empieza a contar la lista de elementos. Siempre un número arábigo, incluso
+                        cuando el atributo <code>type</code> es letras o numerales romanos. Por ejemplo, para empezar a
+                        numerar elementos desde la letra d o el numeral romano IV, utiliza
+                        <code>start=&quot;4&quot;</code>
+                    </dd>
+                    <dt>type</dt>
+                    <dd>
+                        <p>Establece el tipo de numeración:</p>
+                        <p>
+                        <ul>
+                            <li><code>a</code> para letras en minúscula</li>
+                            <li><code>A</code> para letras en mayúscula</li>
+                            <li><code>i</code> para números romanos en minúscula</li>
+                            <li><code>I</code> para números romanos en mayúscula</li>
+                            <li><code>1</code> para números (por defecto)</li>
+                        </ul>
+                        <p>El tipo especificado se usa en toda la lista a no ser que un atributo <code>type</code>
+                            distinto se use en un elemento <code>&lt;li&gt;</code>
+                        </p>
+                        <p>A no ser que el tipo de número de la lista importe (como en documentos legales o técnicos
+                            donde se refiere a los elementos por su número/letra), utiliza en su lugar la propiedad de
+                            CSS <code>list-style-type</code></p>
+                    </dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;dl&gt;</td>
+
+            <td>
+                <p>Una lista de definiciones.</p>
+                <p>El elemento encierra una lista de grupo de términos (especificada utilizando el elemento
+                    <code>&lt;dt&gt;</code>) y descripciones (proporcionadas por elementos <code>&lt;dd&gt;</code>).
+                    Usos comunes para este elemento son implementar un glosario o mostrar metadatos (una lista de pares
+                    clave-valor). No tiene más atributos que los atributos globales.
+                </p>
+                <p class="ejemplo">&lt;dl&gt; <br> &lt;dt&gt;Un término.&lt;/dt&gt; <br>&lt;dd&gt;Definición del
+                    término.&lt;/dd&gt; <br>&lt;dt&gt;Otro término.&lt;/dt&gt;<br> &lt;dd&gt;Definición del otro
+                    término.&lt;/dd&gt;<br>
+                    &lt;/dl&gt;</p>
+                <p>
+                <dl>
+                    <dt>Un término.</dt>
+                    <dd>Definición del término.</dd>
+                    <dt>Otro término.</dt>
+                    <dd>Definición del otro término.</dd>
+                </dl>
+                </p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;hr&gt;</td>
+
+            <td>
+                <p>Una línea horizontal.</p>
+                <p>Representa una ruptura de tema a nivel de elementos de párrafo, como un cambio de escena en una
+                    historia o un cambio de tema en una sección.</p>
+                <p>Históricamente ha sido presentado como una linea horizontal, y aunque sigue siendo representado así
+                    en los navegadores visuales, este elemento ahora está definido en términos semánticos, por lo que si
+                    quieres dibujar una línea debes hacerlo utilizando el CSS adecuado. Es un <a
+                        href="#elementoVacio">elemento vacío</a>. No tiene más atributos que los atributos globales (en
+                    realidad tiene varios más, pero todos obsoletos).</p>
+                <p class="ejemplo">antes&lt;hr&gt;después</p>
+                <p>antes
+                    <hr>después
+                </p>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">&lt;h1&gt;<br>
+                &lt;h2&gt;<br>
+                &lt;h3&gt;<br>
+                &lt;h4&gt;<br>
+                &lt;h5&gt;<br>
+                &lt;h6&gt;<br>
+            </td>
+
+            <td>
+                <p>Encabezado de texto.</p>
+                <p>Representa seis niveles de encabezado de texto, siendo <code>&lt;h1&gt;</code> el más alto y
+                    <code>&lt;h6&gt;</code> el más bajo. No tiene más atributos que los atributos globales.
+                </p>
+                <p>
+                <ul>
+                    <li>Los encabezados pueden ser utilizados por agentes para crear un índice de forma automática</li>
+                    <li>No utilices elementos de encabezado para cambiar el tamaño del texto, utiliza la propiedad de
+                        CSS <code>font-size</code></li>
+                    <li>No saltes niveles de encabezado, empieza por <code>&lt;h1&gt;</code> y continúa por
+                        <code>&lt;h2&gt;</code> y demás.
+                    </li>
+                    <li>Evita usar múltiples elementos <code>&lt;h1&gt;</code> en una página</li>
+                </ul>
+                </p>
+                <p class="ejemplo">
+                    &lt;h1&gt;Este es el encabezado de texto 1&lt;/h1&gt;<br>
+                    &lt;h2&gt;Este es el encabezado de texto 2&lt;/h2&gt;<br>
+                    &lt;h3&gt;Este es el encabezado de texto 3&lt;/h3&gt;<br>
+                    &lt;h4&gt;Este es el encabezado de texto 4&lt;/h4&gt;<br>
+                    &lt;h5&gt;Este es el encabezado de texto 5&lt;/h5&gt;<br>
+                    &lt;h6&gt;Este es el encabezado de texto 6&lt;/h6&gt;<br>
+
+                </p>
+                <h1> Este es el encabezado de texto 1 </h1>
+                <h2> Este es el encabezado de texto 2 </h2>
+                <h3> Este es el encabezado de texto 3 </h3>
+                <h4> Este es el encabezado de texto 4 </h4>
+                <h5> Este es el encabezado de texto 5 </h5>
+                <h6> Este es el encabezado de texto 6 </h6>
+            </td>
+
+            <td>
+                <dl>
+                    <dt><a href="#atributosGlobales">Atributos globales</a></dt>
+                    <dd>Los atributos globales puede ser especificados en todos los elementos HTML</dd>
+                </dl>
+            </td>
+        </tr>
+    </table>
+
+    <!--ATRIBUTOS GLOBALES-->
+    <h2 id="atributosGlobales">Atributos globales</h2>
+    <p>Los atributos globales pueden ser especificados en todos los elementos HTML</p>
+    <p><a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes" target="_blank">Lista completa de
+            los atributos globales</a></p>
+    <table>
+        <caption>Tabla de atributos globales</caption>
+        <tr>
+            <th class="elemento">Atributo</th>
+            <th>Descripción</th>
+        </tr>
+
+        <tr>
+            <td class="elemento">accesskey</td>
+            <td>Da una sugerencia para generar un atajo de teclado al elemento actual. Este atributo consiste en una
+                lista de caracteres separados por un espacio. El navegador debería utilizar el primero que exista en el
+                teclado.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">autocapitalize</td>
+            <td>
+                <p>Controla cuando y cómo la entrada de texto es automáticamente puesta en mayúsculas. Puede tener los
+                    siguientes valores:</p>
+                <p>
+                <ul>
+                    <li><code>off</code> o <code>none</code>, no se pone en mayúsculas automáticamente (todas las letras
+                        por defecto en minúsculas)</li>
+                    <li><code>on</code> o <code>sentences</code>, la primera letra de cada frase se pone por defecto en
+                        mayúsculas, todas las demás letras en minúsculas.</li>
+                    <li><code>words</code>, la primera letra de cada palabra se pone por defecto en mayúsculas, todas
+                        las demás letras en minúsculas.</li>
+                    <li><code>characters</code>, todas las letras por defecto en mayúsculas.</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">autofocus</td>
+            <td>Indica que es un elemento en el cae el foco al cargar la página, o tan pronto como el
+                <code>&lt;dialog&gt;</code> del que es parte se muestra. Es un atributo booleano, inicialmente falso.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">class</td>
+            <td>Lista de clases a las que pertenece el elemento, separadas por un espacio. Estas clases permiten que CSS
+                y JavaScript accedan a esos elementos específicos</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">contenteditable</td>
+            <td>
+                <p>Indica si el elemento debería ser editable por el usuario. Si lo es, el navegador modifica su
+                    comportamiento para permitir la edición. Puede tomar los siguientes valores:</p>
+                <p>
+                <ul>
+                    <li><code>true</code> o cadena vacía, lo que el indica que el elemento debe ser editable.</li>
+                    <li><code>false</code> lo que indica que el elemento no debe ser editable</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">data-*</td>
+            <td>Forma una clase de atributos, llamada datos de atributos a medida. Utilizada por scripts.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">dir</td>
+            <td>
+                <p>Indica la dirección del texto del elemento. Puede tener los siguientes valores:</p>
+                <p>
+                <ul>
+                    <li><code>ltr</code>, que significa izquierda a derecha, y es usado por idiomas que son escritos de
+                        izquierda a derecha.</li>
+                    <li><code>rtl</code>, que significa de derecha a izquierda, y es usado por idiomas que son escritos
+                        de derecha a izquierda, com el árabe.</li>
+                    <li><code>auto</code>, que permite que el navegador elija.</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">draggable</td>
+            <td>
+                <p>Indica si el elemento puede ser arrastrado, utilizando la API Drag an Drop. Puede tener los
+                    siguientes valores:</p>
+                <p>
+                <ul>
+                    <li><code>true</code>, que indica que el elemento puede ser arrastrado.</li>
+                    <li><code>false</code>, que indica que el elemento no puede ser arrastrado.</li>
+                </ul>
+                </p>
+        </tr>
+
+        <tr>
+            <td class="elemento">enterkeyhint</td>
+            <td>Sugiere el icono o la etiqueta de acción a utilizar como tecla enter en teclados virtuales.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">exportparts</td>
+            <td>Experimental. Usado para exportar transitivamente partes de sombra desde un árbol de sombras anidiado a
+                un árbol que contiene luces.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">hidden</td>
+            <td>Indica que el elemento todavía no es (o ya no es) relevante. Por ejemplo, puede utilizarse para ocultar
+                elementos de la página que no pueden usarse hasta que el proceso de login ha sido completado. El
+                navegador no renderizará dichos elementos.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">id</td>
+            <td>Define un identificador único en todo el documento, permitiendo identificar ese elemento desde CSS y
+                JavaScript</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">inert</td>
+            <td>Un valor booleano que hace que el navegador ignore eventos de entrada para el elemento. Útil cuando
+                están presentes eventos click.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">inputmode</td>
+            <td>Sugiere a los navegadores la configuración del teclado virtual a usar cuando se edite este elemento o
+                sus contenidos. Usado principalmente en elementos <code>&lt;input&gt;</td></code>.
+        </tr>
+
+        <tr>
+            <td class="elemento">is</td>
+            <td>Permite especificar que un elemento HTML estándar debe comportarse como un elemento registrado hecho a
+                medida.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">itemid</td>
+            <td>Identificador global único de un ítem.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">itemprop</td>
+            <td>Utilizado para añadir propiedades a un ítem.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">itemref</td>
+            <td>Las propiedades que no son descendientes de un elemento con el atributo <code>itemscope</code> pueden
+                ser asociadas a un ítem utilizando <code>itemref</code>. Proporciona una lista de <code>id</code>s con
+                propiedades adicionales en cualquier lugar del documento.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">itemscope</td>
+            <td>Generalmente funciona con <code>itemtype</code> para especificar que el HTML contenido en un bloque es
+                acerca de un ítem en particular.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">itemtype</td>
+            <td>Especifica la URL del vocabulario que será utilizado para definir <code>itemprop</code>s (propiedades
+                del ítem) en la estructura de datos.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">lang</td>
+            <td>Ayuda a definir el idioma de un elemento: el idioma en que están elementos no editables o el idioma en
+                que el usuario debería escribir los elementos editables. El atributo contiene una etiqueta de lenguaje
+                en el formato definido en RFC 5646.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">nonce</td>
+            <td>Un <i>nonce</i> (number used once) empleado con propósitos criptográficos.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">part</td>
+            <td>Una lista de nombres <code>part</code> del elemento separados por espacios. Los nombres
+                <code>part</code> permite que CSS seleccione y de estilo a elementos específicos del árbol de sombras
+                via el pseudo elemento <code>::part</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">popover</td>
+            <td>Especifica que un elemento debe ser tratado como un <i>pop-over</i>. Un elemento con el atributo
+                <code>popover</code> permanece oculto a la página a no ser que sea abierto interactuando con un elemento
+                invocador que tenga <code>popovertarget</code>, o via <code>showPopover()</code>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">role</td>
+            <td>Define el valor semántico de un elemento, permitiendo que lectores de pantalla y otras herramientas
+                persenten y soporten interacción con un objeto de forma que sea consistente con las expectativas del
+                usuario para ese tipo de objeto.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">slot</td>
+            <td>Asigna una ranura en árbol de sombras a un elemento.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">spellcheck</td>
+            <td>
+                <p>Define si el elemento puede ser verificado para errores ortográficos. Puede tener los siguietes
+                    valores:</p>
+                <p>
+                <ul>
+                    <li><code>true</code> o cadena vacía, que indica que el elemento debería ser, si es posible,
+                        verificado para errores ortográficos.</li>
+                    <li><code>false</code>, que indica que el elemento no debería ser verificado para errores
+                        ortográficos.</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="elemento">style</td>
+            <td>Contiene declaraciones de estilo CSS para aplicar al elemento. Se recomienda que los estilos sean
+                definidos en archivos independientes, el objetivo de este atributo es la aplicación rápida de un estilo,
+                por ejemplo para hacer pruebas.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">tabindex</td>
+            <td>
+                <p>Un entero indicando si el elemento puede ser enfocado, si debería ser parte de una navegación
+                    secuencial del teclado y, de serlo, en qué posición. Puede tomar varios valores:</p>
+                <p>
+                <ul>
+                    <li>Un valor negativo indica que el elemento puede ser enfocado, pero no debería incluirse en la
+                        navegación secuencial del teclado.</li>
+                    <li><code>0</code> significa que el elemento puede ser enfocado e incluido en la navegación
+                        secuencial del teclado, pero su orden relativo es definido por la convención de la plataforma.
+                    </li>
+                    <li>Un valor positivo indica que el elemento puede ser enfocado e incluido en la navegación
+                        secuencial del teclado, el orden en que los elementos son enfocados es el valor creciente de
+                        <code>tabindex</code>. Si varios elementos tienen el mismo <code>tabindex</code>, su orden
+                        relativo sigue sus posiciones relativas en el documento.
+                    </li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="elemento">title</td>
+            <td>Contiene un texto representando información relacionada con el elemento al que pertenece.</td>
+        </tr>
+
+        <tr>
+            <td class="elemento">translate</td>
+            <td>
+                <p>Utilizado para especificar si los valores de los atributos de un elemento y los valores de sus
+                    nódulos hijo <code>Text</code> son traducidos cuando la página es localizada, o si se dejan sin
+                    cambios. Puede tomar los siguientes valores:</p>
+
+                <p>
+                <ul>
+                    <li><code>yes</code> o cadena vacía, que indica que el elemento será traducido.</li>
+                    <li><code>no</code>, que indica que el elemento no será traducido.</li>
+                </ul>
+            </td>
+            </p>
+        </tr>
+
+        <tr>
+            <td class="elemento">virtualkeyboardpolicy</td>
+            <td>
+                <p>Utilizado para controlar el comportamiento del teclado en pantalla en dispositivos como tablets,
+                    teléfonos móviles y otros dispositivos donde no podría estar disponible un teclado físico para
+                    elementos que también utilizan el atributo <code>contenteditable</code>. Puede tomar los siguientes
+                    valores:</p>
+                <p>
+                <ul>
+                    <li><code>auto</code> o cadena vacía, lo que automáticamente muestra el teclado virtual cuando se
+                        enfoca el elemento o se toca.</li>
+                    <li><code>manual</code>, que desacopla el enfoque y el toque en el elemento del estado del teclado
+                        virtual.</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Vocabulario</h2>
+    <dl>
+        <dt id="elementoVacio">Elemento vacío (void element)</dt>
+        <dd>Elemento que no tiene nodos hijo (es decir, elementos anidados o textos). Sólo tienen etiqueta de apertura,
+            <strong>no tienen etiqueta de cierre</strong>. Los elementos vacíos en HTML son los siguientes:
+            <ul>
+                <li>&lt;area&gt;</li>
+                <li>&lt;base&gt;</li>
+                <li>&lt;br&gt;</li>
+                <li>&lt;col&gt;</li>
+                <li>&lt;embed&gt;</li>
+                <li>&lt;hr&gt;</li>
+                <li>&lt;img&gt;</li>
+                <li>&lt;input&gt;</li>
+                <li>&lt;link&gt;</li>
+                <li>&lt;meta&gt;</li>
+                <li>&lt;source&gt;</li>
+                <li>&lt;track&gt;</li>
+                <li>&lt;wbr&gt;</li>
+
+            </ul>
+        </dd>
+    </dl>
+</body>
+
+</html>

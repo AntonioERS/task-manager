@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS CHeat Sheet</title>
+    <script src="js/notificaciones.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <input type ="button" onClick="mensaje1()" value ="Botón 1">
+
+    <h1>CSS CHEAT SHEET</h1>
+
+    <h2>SELECTORES CSS</h2>
+
+
+    <table>
+        <tr>
+            <th>Selectores</th>
+
+        </tr>
+        <tr>
+            <td>
+                <p>Selectores de tipo:</p>
+                <p>También llamados selectores de nombre de etiqueta o selector de elemento:</p>
+                <p class="ejemplo">span {<br>
+                    &nbsp;&nbsp;&nbsp;background-color:yellow;<br>
+                    }</p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p>El selector universal</p>
+                <p>El selector universal se indica con un asterisco <code>*</code> y selecciona todos los elementos del
+                    documento (o del elemento padre, si está ligado a otro elemento y a un indicador de selección
+                    descendiente, por ejemplo):</p>
+                <p class="ejemplo">* {<br>
+                    &nbsp;&nbsp;&nbsp;margin: 0;<br>
+                    }</p>
+                <p>Otro uso de selector universal es para facilitar la legibilidad de tus selectores. Por ejemplo:
+                    <code>article :first-child</code> seleccionará el primer elemento hijo de un elemento
+                    <code>article</code> pero se puede confundir fácilmente con <code>article:firstchild</code> que
+                    selecciona cualquier elemento <code>article</code> que sea el primer hijo de otro elemento. Para
+                    evitar esta confusión, en el primer caso podemos añadir el selector universal, facilitando la
+                    legibilidad: <code>article *:first-child</code>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Selectores de clase</p>
+                <p>El selector de clase comienza por un punto <code>.</code> y selecciona todos los elementos del
+                    documento que estén afectados por esa clase:</p>
+                <p class="ejemplo">.nombreDeLaClase {<br>
+                    &nbsp;&nbsp;&nbsp;background-color: yellow;<br>
+                    }</p>
+                <p class="subnivel">Delimitación de clases en elementos particulares</p>
+                <p>El selector de clase se puede utilizar en conjunción con un elemento en particular para seleccionar
+                    los elementos concretos que estén afectados por una clase. Por ejemplo:</code></p>
+                <p class="ejemplo">h1.nombreDeLaClase {<br>
+                    &nbsp;&nbsp;&nbsp;background-color: yellow;<br>
+                    }</p>
+                <p>seleccionará todos los elementos h1 que estén afectados por esa clase.</p>
+                <p class="subnivel">Delimitar elementos que estén afectados por más de una clase</p>
+                <p>Los elementos pueden tener más de una clase, pudiendo seleccionar cada clase en particular o
+                    elementos que contengan varias o todas las clases:</p>
+                <p class="ejemplo">.nota {<br>
+                    &nbsp;&nbsp;&nbsp;border: 4px solid #666;<br>
+                    &nbsp;&nbsp;&nbsp;padding: .5em;<br>
+                    }</p>
+                <p class="ejemplo">.nota.advertencia {<br>
+                    &nbsp;&nbsp;&nbsp;border-color: orange;<br>
+                    &nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+                    }</p>
+                <p class="ejemplo">.nota.peligro {<br>
+                    &nbsp;&nbsp;&nbsp;border-color: red;<br>
+                    &nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+                    }</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Selectores de ID</p>
+                <p>El selector de ID comienza con almohadilla <code>#</code> y se aplica como el selector de clase, con
+                    la diferencia que cada ID solamente se puede utilizar una vez en el documento y a cada elemento sólo
+                    se le puede aplicar un ID:</p>
+                <p class="ejemplo">#one {<br>
+                    &nbsp;&nbsp;&nbsp;background-color:yellow;<br>
+                    }</p>
+                <p>Se puede puede seleccionar un elemento que tenga la propiedad ID y ese ID puede ir precedido de un
+                    selector de tipo que seleccionará el elemento sólo si el ID y el tipo coinciden:</p>
+                <p class="ejemplo">h1#one {<br>
+                    &nbsp;&nbsp;&nbsp;color: rebeccapurple;<br>
+                    }</p>
+                <p>El ID tiene una especifidad muy alta y anula los demás selectores. Es por ello que es recomendable
+                    utilizar clases en su lugar, pero si es necesario el ID puede utilizarse sin problema.</p>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <p>Selectores de atributo</p>
+                <p>En HTML los elementos pueden tener atributos que proporcionan un nivel de detalle mayor sobre el
+                    elemento
+                    que delimitan. En CSS se pueden utilizar selectores de atributo para seleccionar elementos definidos
+                    con
+                    unos atributos determinados.</p>
+                <p class="subnivel">Selectores de presencia y valor</p>
+                <p>Permiten seleccionar elementos a partir de la presencia de un atributo (por ejemplo
+                    <code>href</code>) o a partir de varias coincidencias diferentes con respecto al valor del atributo:
+                </p>
+                <dl>
+                    <dt>[attr]</dt>
+                    <dd>
+                        Se aplica a elementos con el mismo atributo &quot;attr&quot; cuyo nombre es el valor entre
+                        corchetes:<br>
+                        <code>a[title]</code>
+                    </dd><br>
+
+                    <dt>[attr=&quot;value&quot;]</dt>
+                    <dd>
+                        Se aplica a elementos con un atributo &quot;attr&quot; cuyo valor es exactamente
+                        &quot;value&quot; (el valor entre comillas). Si el atributo tiene más valores además de
+                        exactamente &quot;value&quot; entonces la condición no se cumplirá:<br>
+                        <code>a[href=&quot;https://example.com&quot;]</code>
+                    </dd><br>
+
+                    <dt>[attr~=&quot;value&quot;]</dt>
+                    <dd>
+                        Se aplica a elementos con un atributo &quot;attr&quot; cuyo valor es exactamente
+                        &quot;value&quot; (el valor entre comillas) o contiene una lista de valores separados por
+                        espacios entre los que se encuentra &quot;value&quot;:<br>
+                        <code>p[class~=&quot;special&quot;]</code>
+                    </dd><br>
+
+                    <dt>[attr|=&quot;value&quot;]</dt>
+                    <dd>
+                        Se aplica a elementos con un atributo &quot;attr&quot; cuyo valor es exactamente
+                        &quot;value&quot; (el valor entre comillas) o empieza por &quot;value&quot; seguido de un
+                        guión:<br>
+                        <code>div[lang|=&quot;special&quot;]</code>
+                    </dd><br>
+                </dl>
+
+                <p class="subnivel">Selectores de subcadenas</p>
+                <p>Permiten seleccionar elementos a partir de la presencia de cadenas de texto dentro del valor del
+                    atributo:
+                </p>
+
+                <dl>
+                    <dt>[attr^=value]</dt>
+                    <dd>
+                        Se aplica a elementos con un atributo &quot;attr&quot; cuyo valor comienza por
+                        &quot;value&quot; (el valor entre comillas):<br>
+                        <code>li[class^=&quot;box-&quot;]</code>
+                    </dd><br>
+
+                    <dt>[attr$=value]</dt>
+                    <dd>
+                        Se aplica a elementos con un atributo &quot;attr&quot; cuyo valor termina en &quot;value&quot;
+                        (el valor entre comillas):<br>
+                        <code>li[class$=&quot;-box&quot;]</code>
+                    </dd><br>
+
+                    <dt>[attr*=value]</dt>
+                    <dd>
+                        Se aplica a elementos con un atributo &quot;attr&quot; cuyo valor contiene &quot;value&quot;
+                        (el valor entre comillas) en cualquier lugar de la cadena:<br>
+                        <code>li[class*=&quot;box&quot;]</code>
+                    </dd><br>
+                </dl>
+
+                <p class="subnivel">Distinguir (o no) mayúsculas de minúsculas en las búsquedas de valores</p>
+                <p>HTML distingue entre mayúsculas y minúsculas, así que a la hora de buscar valores de los atributos
+                    hay que tener esto en cuenta. Si queremos indicar a CSS que no distinga entre mayúsculas y
+                    minúsculas se puede utilizar el valor <code>i</code> antes del corchete de cierre, lo que hace que
+                    el navegador busque coincidencias independientemente de que sean mayúsculas o minúsculas. Para
+                    buscar:
+                </p>
+                <p class="ejemplo">li[class^="a" i]</p>
+                <p>Selecciona los elementos <code>li</code> que tengan una clase cuyo valor empieza por &quot;a&quot;
+                    independientemente de si está en mayúsculas o minúsculas.</p>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Pseudo-clases</p>
+                <p>Las pseudo-clases son selectores que seleccionan elementos que tienen un estado específico, como que
+                    son el primer elemento de su tipo, o sobre los que está pasando el ratón. Actúan como si se hubiese
+                    aplicado una clase a una parte del documento. Las pseudo-clases empiezan con dos puntos
+                    <code>:</code> como por ejemplo <code>:hover</code>
+                </p>
+                <p class="ejemplo">article p:first-child {<br>
+                    &nbsp;&nbsp;&nbsp;font-size: 120%;<br>
+                    &nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+                    }</p>
+                <p>Se puede escribir la pseudo-clase sin un selector de elemento antes. En el ejemplo anterior,
+                    podríamos escribir <code>article :first-child</code> y la regla se aplicaría a cualquer elemento que
+                    sea el primer hijo de un elemento <code>&lt;article&gt;</code> y no sólo al primer párrafo hijo como
+                    habíamos indicado</p>
+                <p class="subnivel">Pseudo-clases de acción de usuario</p>
+
+                <p>Algunas pseudo-clases sólo se aplican cuando el usuario interactúa de alguna forma con el documento.
+                    A estas pseudo-clases a veces se les llama pseudo-clases dinámicas. Ejemplos de estas pseudo-clases
+                    son <code>:hover</code> o <code>:focus</code></p>
+
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">Listado de
+                        pseudo-clases</a></p>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <p>Pseudo-elementos</p>
+                <p>Los pseudo-elementos se comportan de una forma similar a las pseudo-clases, sin embargo actúan como
+                    si se hubiese añadido un nuevo elemento HTML, el lugar de aplicar una clase a los elementos
+                    existentes. Los pseudo-elementos comienzan por dos puntos dobles <code>::</code> como por ejemplo
+                    <code>::before</code>
+                </p>
+                <p class="ejemplo">article p::first-line {<br>
+                    &nbsp;&nbsp;&nbsp;font-size: 120%;<br>
+                    &nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+                    }</p>
+                <p>En este ejemplo es como si apareciese una etiqueta <code>&lt;span&gt;</code> seleccionando la primera
+                    línea de los
+                    párrafos dentro del elemento <code>&lt;article&gt;</code> y se adaptase automáticamente a los
+                    cambios de la línea. Afectaría a todos los párrafos dentro del elemento
+                    <code>&lt;article&gt;</code>, pero podemos combinarlo con una pseudo-clase de forma que sólo afecte
+                    al primer párrafo hijo de <code>&lt;article&gt;</code>:
+                    <code>article p:first-child::fist-line</code>
+                </p>
+                <p class="subnivel">Generando contenido con ::before y ::after</p>
+
+                <p>Hay dos pseudo-elementos especiales que son utilizados conjuntamente con la propiedad
+                    <code>content</code> para insertar contenido en el documento utilizando CSS: los pseudo-elementos
+                    <code>::before</code> y <code>::after</code>
+                </p>
+
+                <p class="ejemplo">.box::before {<br>
+                    &nbsp;&nbsp;&nbsp;content:&quot;Esto se deberá mostrar antes que el otro contenido &quot;;<br>
+                    }</p>
+
+                <p>El insertar texto desde CSS no es algo habitual, en cambio es más común utilizar estos
+                    pseudo-elementos para insertar un icono, para por ejemplo evitar que sea leído por un lector de
+                    pantalla</p>
+
+                <p class="ejemplo">.box::after {<br>
+                    &nbsp;&nbsp;&nbsp;content:&quot; ➥ &quot;;<br>
+                    }</p>
+
+                <p>Otro uso habitual es para añadir una cadena vacía a la que posteriormente se le da estilo como
+                    cualquier otro elemento de la página. En el siguiente ejemplo insertamos una cadena vacía que
+                    transformamos en un cuadrado al que damos un estilo:</p>
+
+                <p class="ejemplo">.box::before {<br>
+                    &nbsp;&nbsp;&nbsp;content:&quot;&quot;;<br>
+                    &nbsp;&nbsp;&nbsp;display:block;<br>
+                    &nbsp;&nbsp;&nbsp;width: 100px;<br>
+                    &nbsp;&nbsp;&nbsp;height: 100px;<br>
+                    &nbsp;&nbsp;&nbsp;background-color: rebeccapurple;<br>
+                    &nbsp;&nbsp;&nbsp;border: 1px solid black;<br>
+                    }</p>
+
+                <p>Lista de pseudo-elementos:</p>
+
+                <dl>
+                    <dt>::after</dt>
+                    <dd>Crea un pseudo-elemento que es el último hijo del elemento seleccionado, al que se le puede
+                        añadir contenido mediante la propiedad <code>content</code></dd>
+                    <dt>::backdrop</dt>
+                    <dd>Es una caja del tamaño del tamaño de la ventana visible, caja que es renderizada inmediatamente
+                        detrás de cualquier elemento que esté siendo presentado en la capa superior.</dd>
+                    <dt>::before</dt>
+                    <dd>Crea un pseudo-elemento que es el primer hijo del elemento seleccionado, al que se le puede
+                        añadir contenido mediante la propiedad <code>content</code></dd>
+                    <dt>::cue</dt>
+                    <dt>::cue-region</dt>
+                    <dt>::first-letter</dt>
+                    <dd>Aplica estilo a la primera letra de la primera línea de un elemento con nivel de bloque, pero
+                        solo cuando no está precedida por otro contenido (como imágenes o tablas)</dd>
+                    <dt>::first-line</dt>
+                    <dd>Aplica estilo a la primera línea de un elemento con nivel de bloque</dd>
+                    <dt>::file-selector-button</dt>
+                    <dd>Representa el botón de un elemento <code>&lt;input&gt;</code> de
+                        <code>type=&quot;file&quot;</code>
+                    </dd>
+                    <dt>::marker</dt>
+                    <dd>Selecciona el marcador de un elemento de lista, el cual normalmente contiene un círculo o un
+                        número. Admite todas las propiedades <code>font</code>, <code>white-space</code>,
+                        <code>color</code> <code>text-combine-upright</code>, <code>unicode-bidi</code>,
+                        <code>direction</code>, <code>content</code> y todas las propiedades <code>animation</code> y
+                        <code>transition</code>
+                    </dd>
+                    <dt>::part()</dt>
+                    <dt>::placeholder</dt>
+                    <dd>Representa el &quot;placeholder text&quot; en un elemento <code>&lt;input&gt;</code> o
+                        <code>&lt;textarea&gt;</code>
+                    </dd>
+                    <dt>::selection</dt>
+                    <dd>Aplica estilos a las partes de un documento que han sido resaltadas por el usuario, como
+                        haciendo click y arrastrando el ratón por el texto.</dd>
+                    <dt>::slotted()</dt>
+                    <dd>Representa cualquier elemento que haya sido situado dentro de un <code>slot</code> en una
+                        plantilla HTML</dd>
+
+                </dl>
+
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank">Listado de
+                        pseudo-elementos</a></p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>COMBINADORES CSS</h2>
+
+    <table>
+        <tr>
+            <th>Combinadores</th>
+
+        </tr>
+        <tr>
+            <td>
+                <p>Selector de descendientes</p>
+                <p>Es la combinación de distintos selectores con un espacio entre ellos. Estos selectores seleccionan
+                    elementos que son descendientes de otros selectores. En el ejemplo seleccionamos el elemento
+                    <code>&lt;p&gt;</code> que hay dentro de una clase <code>.box</code>
+                </p>
+                <p class="ejemplo">.box p{<br>
+                    &nbsp;&nbsp;&nbsp;color:red;<br>
+                    }</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Selector de combinación de elementos hijo</p>
+                <p>El selector de combinación de elementos hijo es un símbolo de &quot;mayor que&quot; <code>></code>
+                    que selecciona sólo cuando los selectores identifican elementos que son hijos directos. Los
+                    elementos descendentes que se encuentren más abajo en la jeraquía no se seleccionan. Por ejemplo,
+                    para seleccionar los elementos <code>&lt;p&gt;</code> que son hijos directos de elementos
+                    <code>&lt;article&gt;</code>
+                </p>
+                <p class="ejemplo">article > p{<br>
+                    &nbsp;&nbsp;&nbsp;color:red;<br>
+                    }</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Hermanos adyacentes</p>
+                <p>El selector de elementos hermanos adyacentes es un símbolo de suma<code>+</code>
+                    que selecciona un elemento que se encuentra justo al lado de otro elemento en el mismo nivel de la
+                    jerarquía. En el ejemplo, para seleccionar todos los elementos <code>&lt;img&gt;</code> que aparecen
+                    justo después de elementos <code>&lt;p&gt;</code></p>
+                <p class="ejemplo">p + img{<br>
+                    &nbsp;&nbsp;&nbsp;color:red;<br>
+                    }</p>
+
+                <p>Un uso muy común es modificar el párrafo que va justo después del título.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Hermanos generales</p>
+                <p>El selector de combinación de elementos hermanos, incluso si no son directamente adyacentes, es el
+                    símbolo <code>~</code> En el ejemplo, para seleccionar todos los elementos <code>&lt;img&gt;</code>
+                    que aparecen
+                    después de elementos <code>&lt;p&gt;</code></p>
+                <p class="ejemplo">p ~ img{<br>
+                    &nbsp;&nbsp;&nbsp;color:red;<br>
+                    }</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Uso de selectores de combinación.</p>
+                <p>Los selectores de combinación se pueden usar con cualquiera de los selectores vistos anteriormente,
+                    aunque hay que tener cuidado de no crear selecciones muy específicas que tengan poca reutilización a
+                    lo largo del documento. En este caso es mejor crear una clase sencilla y aplicarla a los elementos
+                    en cuestión.</p>
+                <p>En el ejemplo, para seleccionar elementos de una lista con una clase &quot;a&quot; que son hijos
+                    directos de <code>&lt;ul&gt;</code></p>
+                <p class="ejemplo">ul > li[class=&quot;a&quot;]</li>{<br>
+                    &nbsp;&nbsp;&nbsp;color:red;<br>
+                    }</p>
+            </td>
+        </tr>
+
+
+
+    </table>
+
+
+</body>
+
+</html>

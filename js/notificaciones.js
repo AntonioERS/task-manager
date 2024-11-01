@@ -1,12 +1,15 @@
-function botonsalir() {
-  alert ("Mensaje de prueba 1");
+
+function nuevaNotificacion() {
+  alert ("Tiene una nueva notificación");
 }
 
-function botonmensajenuevo() {
-  alert ("You have mail!");
+function salirNotificacion() {
+  confirm ("Confirma que desea salir del sistema de notificaciones?");
 }
 
-function botonentrar mensaje() {
-  alert ("Mensaje de prueba 3");
+function enviarNotificacion() {
+  let mensaje = prompt ("Escriba la notificación a enviar");
+  if(mensaje) {
+    alert ("Notificación enviada")
+  }
 }
-

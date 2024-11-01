@@ -8,5 +8,8 @@ function salirNotificacion() {
 }
 
 function enviarNotificacion() {
-  prompt ("Escriba la notificación a enviar");
+  let mensaje = prompt ("Escriba la notificación a enviar");
+  if(mensaje) {
+    alert ("Notificación enviada")
+  }
 }

@@ -1,15 +1,12 @@
-function mensaje1() {
-  alert ("Mensaje de prueba 1");
+function nuevaNotificacion() {
+  alert ("Tiene una nueva notificación");
 }
 
-function mensaje2() {
-  alert ("Mensaje de prueba 2");
+function salirNotificacion() {
+  confirm ("Confirma que desea salir del sistema de notificaciones?");
 }
 
-function mensaje3() {
-  alert ("Mensaje de prueba 3");
+function enviarNotificacion() {
+  prompt ("Escriba la notificación a enviar");
 }
 
-function mensaje4() {
-  alert ("Mensaje de prueba 4");
-}
